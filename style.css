@@ -507,7 +507,7 @@ p {
 
   .col-left .about-img {
     border: none; /* Remove border in mobile view */
-    padding-top: 15px; /* Add padding to push image down */
+    padding-top: 17px; /* Add padding to push image down */
   }
 
   .col-left .about-img img {
