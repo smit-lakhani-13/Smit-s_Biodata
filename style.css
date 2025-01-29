@@ -19,6 +19,15 @@ a {
   align-items: center;
   justify-content: center;
 }
+.containertwo {
+  min-height: fit-content;
+  /* background-color: #007bff; */
+  margin: 40px 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 img {
   height: 100%;
   width: 100%;
@@ -199,14 +208,14 @@ p {
 /* End Header section */
 
 /* Hero Section */
-#hero {
+#home {
   background-image: url(./img/Smit-bg.jpg);
   background-size: cover;
   background-position: top center;
   position: relative;
   z-index: 1;
 }
-#hero::after {
+#home::after {
   content: "";
   position: absolute;
   left: 0;
@@ -217,13 +226,13 @@ p {
   opacity: 0.7;
   z-index: -1;
 }
-#hero .hero {
+#home .home {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 50px;
   justify-content: flex-start;
 }
-#hero h1 {
+#home h1 {
   display: block;
   width: fit-content;
   font-size: 4rem;
@@ -232,17 +241,17 @@ p {
   animation: text_reveal 0.5s ease forwards;
   animation-delay: 1s;
 }
-#hero h1:nth-child(1) {
+#home h1:nth-child(1) {
   animation-delay: 1s;
 }
-#hero h1:nth-child(2) {
+#home h1:nth-child(2) {
   animation-delay: 2s;
 }
-#hero h1:nth-child(3) {
+#home h1:nth-child(3) {
   animation: text_reveal_name 0.5s ease forwards;
   animation-delay: 3s;
 }
-#hero h1 span {
+#home h1 span {
   position: absolute;
   top: 0;
   left: 0;
@@ -252,13 +261,13 @@ p {
   animation: text_reveal_box 1s ease;
   animation-delay: 0.5s;
 }
-#hero h1:nth-child(1) span {
+#home h1:nth-child(1) span {
   animation-delay: 0.5s;
 }
-#hero h1:nth-child(2) span {
+#home h1:nth-child(2) span {
   animation-delay: 1.5s;
 }
-#hero h1:nth-child(3) span {
+#home h1:nth-child(3) span {
   animation-delay: 2.5s;
 }
 
@@ -424,9 +433,10 @@ p {
 #about .about {
   flex-direction: column-reverse;
   text-align: center;
-  max-width: 1200px;
+  max-width: fit-content;
   margin: 0 auto;
-  padding: 100px 20px;
+  /* background-color: #007bff; */
+  padding: 0px 0px;
 }
 #about .col-left {
   width: 250px;
@@ -434,6 +444,7 @@ p {
 }
 #about .col-right {
   width: 100%;
+
 }
 #about .col-right h2 {
   font-size: 1.8rem;
@@ -442,7 +453,10 @@ p {
   margin-bottom: 10px;
 }
 #about .col-right p {
-  margin-bottom: 20px;
+  font-size: 1.4rem;
+  font-weight: 300;
+  line-height: 2.5rem;
+
 }
 #about .col-right .cta {
   color: black;
@@ -473,6 +487,11 @@ p {
     flex-direction: column; /* Change flex direction to column for mobile */
     text-align: center;
   }
+  .containertwo{
+    flex-direction: column;
+    padding: 0 20px;
+  }
+
 
   .col-left {
     width: 100%;
@@ -482,7 +501,8 @@ p {
 
   .col-right {
     width: 100%;
-    text-align: center;
+    text-align: left;
+    padding: 0 40px;
   }
 
   .col-left .about-img {
@@ -503,6 +523,21 @@ p {
 
 /* End About Section */
 /* Gallery Section */
+.gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  padding: 20px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
 .carousel {
   position: relative;
   max-width: 100%;
@@ -515,30 +550,24 @@ p {
 .carousel-inner {
   display: flex;
   transition: transform 0.5s ease-in-out;
-  width: 100%;
-  height: 500px;
+  width: auto;
+  height: 450px;
 }
 
 .carousel-item {
+  height: 450px; 
+    width: auto;
   min-width: 100%;
-  aspect-ratio: 9 / 16; /* Maintain 9:16 aspect ratio */
   object-fit: cover;
   display: none;
-  border: 10px solid #222; /* Main border */
-  border-radius: 20px; /* Rounded corners */
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Shadow effect */
-  justify-content: center;
-  align-items: center;
+  border: 5px solid #222;
+  border-radius: 10px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  aspect-ratio: 9 / 16;
 }
 
 .carousel-item.active {
   display: block;
-}
-
-.carousel-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ensures the image fills the frame, cropping if necessary */
 }
 
 .carousel-button {
@@ -548,7 +577,7 @@ p {
   background: rgba(0, 0, 0, 0.5);
   color: #fff;
   border: none;
-  font-size: 2rem;
+  font-size: 1.5rem;
   cursor: pointer;
   z-index: 10;
   padding: 10px;
@@ -571,18 +600,53 @@ p {
 
 /* For Mobile (up to 768px) */
 @media (max-width: 768px) {
+  .carousel-inner {
+    height: 350px;
+  }
+
+  .carousel-item {
+    height: 350px; 
+    width: auto;
+    aspect-ratio: 9 / 16;
+    border-width: 3px;
+  }
+
   .carousel-button {
-    font-size: 1.5rem;
+    font-size: 1rem;
     padding: 5px;
+  }
+
+  .image-gallery img {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/* For Tablets (up to 1024px) */
+@media (max-width: 1024px) {
+  .carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: auto;
+    height: 500px; /* Increased height */
+    max-width: 1000px; /* Optional: Set a max-width for better scaling */
+  }
+
+  .image-gallery img {
+    width: 90px;
+    height: 90px;
   }
 
   .carousel-item {
     border-width: 6px; /* Smaller border for smaller screens */
-    aspect-ratio: 4 / 3; /* Adjust aspect ratio to fit better on mobile */
+    aspect-ratio: 9 / 16; /* Adjust aspect ratio to fit better on mobile */
+    height: 500px; 
+    width: auto;
   }
 
+
   .carousel-inner {
-    height: 300px; /* Smaller height for mobile devices */
+    height: 500px; /* Smaller height for mobile devices */
   }
 
   .carousel-item img {
@@ -644,11 +708,15 @@ p {
   }
 
   .carousel-item {
+    aspect-ratio: 9 / 16;
+    height: 550px; /* Increase the height */
+    width: auto;
     border-width: 8px; /* Slightly larger borders for tablets */
   }
 
   .carousel-inner {
-    height: 400px; /* Adjust height for tablets */
+    height: 550px; 
+    width: auto;
   }
 
   .about .container {
@@ -666,11 +734,14 @@ p {
 /* For Large Desktops and Above */
 @media (min-width: 1200px) {
   .carousel-inner {
-    height: 500px; /* Restore original height on large screens */
+    height: 550px; /* Restore original height on large screens */
   }
 
   .carousel-item {
     border-width: 10px;
+    height: 550px; /* Increase the height */
+    width: auto;
+    aspect-ratio: 9 / 16;
   }
 
   .carousel-button {
@@ -687,6 +758,12 @@ p {
   margin: 0 auto;
   width: 90%;
 }
+@media (max-width: 768px) { 
+  #contact .contact {
+    margin-top: 20px;
+  }
+}
+
 #contact .contact-info h2 {
   cursor: pointer;
   color: #007bff; /* Optional: to make it stand out as clickable */
@@ -725,8 +802,7 @@ p {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  box-shadow: 0px 0px 18px 0 #0000002c;
-  transition: 0.3s ease box-shadow;
+  box-shadow: 0px 0px 10px 0 #0000001c;  transition: 0.3s ease box-shadow;
 }
 #contact .contact-item:hover {
   box-shadow: 0px 0px 5px 0 #0000002c;
@@ -833,7 +909,7 @@ p {
   }
 
   /* Hero */
-  #hero h1 {
+  #home h1 {
     font-size: 7rem;
   }
   /* End Hero */
